@@ -1,149 +1,189 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Buton Deneme</title>
+<meta charset="UTF-8">
+<title>Deneme Layout</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(180deg, #f3f3f3, #e8e8e8);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(180deg, #f3f3f3, #e8e8e8);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
-    /* === ÜST KAYAN FRAME ALANI === */
-    .marquee {
-      position: absolute;
-      top: 40px;
-      width: 100%;
-      overflow: hidden;
-    }
+/* =========================
+   ÜST KAYAN FRAME ALANI
+========================= */
+.marquee {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  overflow: hidden;
+}
 
-    .track {
-      display: flex;
-      gap: 16px;
-      width: max-content;
-      animation: scroll 25s linear infinite;
-    }
-
-    .frame {
-      width: 100px;
-      height: 180px;
-      background: #dcdcdc;
-      border-radius: 12px;
-      flex-shrink: 0;
-    }
-
-    
-    .track {
+.track {
   display: flex;
   gap: 16px;
   width: max-content;
   animation: scroll 30s linear infinite;
 }
 
-    
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.frame {
+  width: 160px;
+  height: 90px;
+  background: #dcdcdc;
+  border-radius: 12px;
+  flex-shrink: 0;
 }
 
-    
-    /* === BUTONLAR === */
-    .wrapper {
-      display: flex;
-      gap: 24px;
-      z-index: 2;
-    }
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 
-    button {
-      padding: 18px 40px;
-      border-radius: 60px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+/* =========================
+   BUTONLAR
+========================= */
+.wrapper {
+  display: flex;
+  gap: 24px;
+  margin-top: 80px;
+}
 
-    .primary {
-      border: none;
-      background: linear-gradient(135deg, #ffd400, #ffb800);
-      box-shadow: 0 12px 32px rgba(255, 200, 0, 0.45);
-    }
+button {
+  padding: 18px 40px;
+  border-radius: 60px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-    .primary:hover {
-      transform: translateY(-2px);
-    }
+.primary {
+  border: none;
+  background: linear-gradient(135deg, #ffd400, #ffb800);
+  box-shadow: 0 12px 32px rgba(255, 200, 0, 0.45);
+}
 
-    .outline {
-      background: transparent;
-      border: 2px solid #000;
-    }
+.primary:hover {
+  transform: translateY(-2px);
+}
 
-    .outline:hover {
-      background: linear-gradient(135deg, #ffd400, #ffb800);
-      border-color: transparent;
-    }
+.outline {
+  background: transparent;
+  border: 2px solid #000;
+}
 
-    .text-row {
-      margin-top: 40px;
-      display: flex;
-      gap: 40px;
-    }
+.outline:hover {
+  background: linear-gradient(135deg, #ffd400, #ffb800);
+  border-color: transparent;
+}
 
-    .text-box {
-      width: 240px;
-      height: 44px;
-      overflow: hidden;
-    }
+/* =========================
+   BUTONLARIN ALTINDA
+   YATAY METİN ALANI
+========================= */
+.text-row {
+  margin-top: 40px;
+  display: flex;
+  gap: 40px;
+}
 
-    .text-track {
-      display: flex;
-      flex-direction: column;
-      animation: textSlide 4.5s infinite;
-    }
+.text-box {
+  width: 240px;
+  height: 44px;
+  overflow: hidden;
+}
 
-    .text-track.delay-1 {
-      animation-delay: 1.5s;
-    }
+.text-track {
+  display: flex;
+  flex-direction: column;
+  animation: textSlide 4.5s infinite;
+}
 
-    .text-track.delay-2 {
-      animation-delay: 3s;
-    }
+.text-track.delay-1 {
+  animation-delay: 1.5s;
+}
 
-    .text {
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      font-weight: 300;
-      letter-spacing: -0.04em;
-      text-transform: uppercase;
-      color: #000;
-    }
+.text-track.delay-2 {
+  animation-delay: 3s;
+}
 
-    @keyframes textSlide {
-      0%   { transform: translateY(0); }
-      33%  { transform: translateY(-44px); }
-      66%  { transform: translateY(-88px); }
-      100% { transform: translateY(0); }
-    }
-    
-    <!-- METİN ALANI -->
+.text {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #000;
+}
+
+@keyframes textSlide {
+  0%   { transform: translateY(0); }
+  33%  { transform: translateY(-44px); }
+  66%  { transform: translateY(-88px); }
+  100% { transform: translateY(0); }
+}
+
+/* =========================
+   ALT SOSYAL MEDYA
+========================= */
+.social {
+  position: fixed;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
+.social svg {
+  width: 16px;
+  height: 16px;
+  fill: white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ÜST FRAME MARQUEE -->
+<div class="marquee">
+  <div class="track">
+    <!-- 12 FRAME x 2 (sonsuz döngü için) -->
+    <div class="frame"></div><div class="frame"></div><div class="frame"></div>
+    <div class="frame"></div><div class="frame"></div><div class="frame"></div>
+    <div class="frame"></div><div class="frame"></div><div class="frame"></div>
+    <div class="frame"></div><div class="frame"></div><div class="frame"></div>
+
+    <div class="frame"></div><div class="frame"></div><div class="frame"></div>
+    <div class="frame"></div><div class="frame"></div><div class="frame"></div>
+    <div class="frame"></div><div class="frame"></div><div class="frame"></div>
+    <div class="frame"></div><div class="frame"></div><div class="frame"></div>
+  </div>
+</div>
+
+<!-- BUTONLAR -->
+<div class="wrapper">
+  <button class="primary">Sende Katıl</button>
+  <button class="outline">Keşfet</button>
+</div>
+
+<!-- BUTONLARIN ALTINDA METİN -->
 <div class="text-row">
   <div class="text-box">
     <div class="text-track">
@@ -170,78 +210,13 @@
   </div>
 </div>
 
-    /* === ALT SOSYAL MEDYA === */
-    .social {
-      position: fixed;
-      bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      color: #fff;
-      mix-blend-mode: difference;
-    }
-
-    .social svg {
-      width: 16px;
-      height: 16px;
-      fill: white;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- ÜST FRAME ALANI -->
- <div class="marquee">
-  <div class="track">
-
-    <!-- SET 1 -->
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-
-    <!-- SET 2 (BİREBİR KOPYA) -->
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-    <div class="frame"></div>
-
-  </div>
+<!-- ALT SOSYAL -->
+<div class="social">
+  <svg viewBox="0 0 24 24">
+    <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7z"/>
+  </svg>
+  <span>@omerdesign</span>
 </div>
-
-
-  <!-- BUTONLAR -->
-  <div class="wrapper">
-    <button class="primary">Sende Katıl</button>
-    <button class="outline">Keşfet</button>
-  </div>
-
-  <!-- ALT SOSYAL -->
-  <div class="social">
-    <svg viewBox="0 0 24 24">
-      <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 12 17a4.5 4.5 0 0 0 0-9zm0 7.4A2.9 2.9 0 1 1 12 9a2.9 2.9 0 0 1 0 5.8zm4.6-7.8a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-    </svg>
-    <span>@omerdesign</span>
-  </div>
-
 
 </body>
 </html>
