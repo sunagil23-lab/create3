@@ -95,6 +95,33 @@
       border-color: transparent;
     }
 
+    <!-- METİN ALANI -->
+<div class="text-row">
+  <div class="text-box">
+    <div class="text-track">
+      <div class="text">SOCIAL MEDIA</div>
+      <div class="text">BRANDING</div>
+      <div class="text">UI DESIGN</div>
+    </div>
+  </div>
+
+  <div class="text-box">
+    <div class="text-track delay-1">
+      <div class="text">BRANDING</div>
+      <div class="text">UI DESIGN</div>
+      <div class="text">SOCIAL MEDIA</div>
+    </div>
+  </div>
+
+  <div class="text-box">
+    <div class="text-track delay-2">
+      <div class="text">UI DESIGN</div>
+      <div class="text">SOCIAL MEDIA</div>
+      <div class="text">BRANDING</div>
+    </div>
+  </div>
+</div>
+
     /* === ALT SOSYAL MEDYA === */
     .social {
       position: fixed;
@@ -166,6 +193,52 @@
     </svg>
     <span>@omerdesign</span>
   </div>
+/* === YATAY METİN ALANI === */
+.text-row {
+  margin-top: 40px;
+  display: flex;
+  gap: 40px;
+}
+
+.text-box {
+  width: 240px;
+  height: 44px;
+  overflow: hidden;
+}
+
+.text-track {
+  display: flex;
+  flex-direction: column;
+  animation: textSlide 4.5s infinite;
+}
+
+.text-track.delay-1 {
+  animation-delay: 1.5s;
+}
+
+.text-track.delay-2 {
+  animation-delay: 3s;
+}
+
+.text {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #000;
+}
+
+/* DİKEY KAYMA */
+@keyframes textSlide {
+  0%   { transform: translateY(0); }
+  33%  { transform: translateY(-44px); }
+  66%  { transform: translateY(-88px); }
+  100% { transform: translateY(0); }
+}
 
 </body>
 </html>
